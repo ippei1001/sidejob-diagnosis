@@ -1,1 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>副業タイプ診断</title>
+  <meta name="description" content="3分でわかる副業タイプ診断。性格・使える時間・得意なことから、あなたに合う副業スタイルを診断します。" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <section id="screen-start" class="screen active">
+      <div class="card">
+        <p class="eyebrow">3分でわかる</p>
+        <h1>あなたに向いている<br>副業タイプ診断</h1>
+        <p class="lead">
+          性格・使える時間・得意なことから、
+          あなたに合う副業スタイルを診断します。
+        </p>
 
+        <div class="info-list">
+          <div class="info-item">質問は全部で10問</div>
+          <div class="info-item">直感で答えてOK</div>
+          <div class="info-item">結果で最初の一歩もわかる</div>
+        </div>
+
+        <button id="start-button" class="primary-button">診断をはじめる</button>
+      </div>
+    </section>
+
+    <section id="screen-question" class="screen">
+      <div class="card">
+        <div class="progress-top">
+          <span id="progress-text">1 / 10</span>
+        </div>
+        <div class="progress-bar">
+          <div id="progress-fill" class="progress-fill"></div>
+        </div>
+
+        <h2 id="question-title" class="question-title"></h2>
+
+        <div id="choices" class="choices"></div>
+
+        <div class="question-footer">
+          <button id="back-button" class="secondary-button">戻る</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="screen-result" class="screen">
+      <div class="card">
+        <p class="eyebrow">診断結果</p>
+        <h2 id="result-title" class="result-title"></h2>
+        <p id="result-summary" class="result-summary"></p>
+
+        <div class="result-block">
+          <h3>向いている副業</h3>
+          <ul id="result-goodfits"></ul>
+        </div>
+
+        <div class="result-block">
+          <h3>向いていない副業</h3>
+          <ul id="result-badfits"></ul>
+        </div>
+
+        <div class="result-block">
+          <h3>最初の一歩</h3>
+          <p id="result-firststep"></p>
+        </div>
+
+        <div class="result-block">
+          <h3>一言アドバイス</h3>
+          <p id="result-advice"></p>
+        </div>
+
+        <div class="result-actions">
+          <button id="retry-button" class="secondary-button">もう一度診断する</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
