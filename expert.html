@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>副業タイプ診断 詳細ページ</title>
+  <meta name="description" content="副業タイプ診断の詳細ページです。タイプごとの特徴、向いている副業、始め方を確認できます。" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <section class="screen active">
+      <div class="card" id="detail-page" data-type="expert">
+        <header class="page-header">
+          <p id="detail-eyebrow" class="eyebrow"></p>
+          <h1 id="detail-title" class="page-title"></h1>
+          <p id="detail-summary" class="page-intro"></p>
+        </header>
+
+        <div class="content-stack">
+          <article class="content-card">
+            <h2>そのタイプの特徴</h2>
+            <p id="detail-features"></p>
+          </article>
+
+          <article class="content-card">
+            <h2>向いている副業3つ</h2>
+            <ul id="detail-goodfits"></ul>
+          </article>
+
+          <article class="content-card">
+            <h2>向いていない副業</h2>
+            <ul id="detail-badfits"></ul>
+          </article>
+
+          <article class="content-card">
+            <h2>始め方</h2>
+            <p id="detail-start"></p>
+          </article>
+
+          <article class="content-card">
+            <h2>よくある失敗</h2>
+            <ul id="detail-mistakes"></ul>
+          </article>
+
+          <article class="content-card">
+            <h2>AIを使うならどう始めるか</h2>
+            <p id="detail-ai-start"></p>
+          </article>
+        </div>
+
+        <div class="page-actions">
+          <a class="primary-button" href="index.html">診断ページに戻る</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="data.js"></script>
+  <script src="detail.js"></script>
+</body>
+</html>

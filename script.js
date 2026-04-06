@@ -1,12 +1,3 @@
-const TYPES = {
-  steady: "コツコツ積み上げ型",
-  quick: "即収益スキル販売型",
-  system: "仕組み化・自動化型",
-  content: "発信・コンテンツ型",
-  sales: "営業・提案型",
-  expert: "専門知識活用型"
-};
-
 const questions = [
   {
     text: "Q1. 副業に使える平日の時間は？",
@@ -120,57 +111,6 @@ const questions = [
   }
 ];
 
-const results = {
-  steady: {
-    title: "あなたは「コツコツ積み上げ型」です",
-    summary: "あなたは、短期間で一気に稼ぐよりも、少しずつ積み上げて形にしていく副業が向いています。派手さはなくても、継続するほど強くなるタイプです。",
-    goodFits: ["ブログ", "情報サイト運営", "SNSアカウント育成", "コンテンツ販売", "アフィリエイト"],
-    badFits: ["営業色が強い受託", "対人交渉が多い案件", "即納中心の仕事"],
-    firstStep: "まずは1テーマに絞って、3か月続ける前提で始めるのが向いています。",
-    advice: "すぐ稼げないことを弱みだと思わなくて大丈夫です。積み上げ型は、途中でやめない人が最後に勝ちます。"
-  },
-  quick: {
-    title: "あなたは「即収益スキル販売型」です",
-    summary: "あなたは、時間を使って成果物を作り、その対価をもらう副業と相性がいいです。まずは売れる作業を持つ方が向いています。",
-    goodFits: ["Web制作", "LP制作", "動画編集", "バナー作成", "資料作成代行", "AIを使った制作代行"],
-    badFits: ["収益化まで長い副業一本勝負"],
-    firstStep: "まずは1万円の売上を目標にして、小さく売れるサービスを作るのが近道です。",
-    advice: "あなたは積み上げる前に、先に売上を作った方が伸びるタイプです。"
-  },
-  system: {
-    title: "あなたは「仕組み化・自動化型」です",
-    summary: "あなたは、自分がずっと手を動かし続けるより、最初に仕組みを作って後から楽にする副業が向いています。AIやツール活用との相性がいいタイプです。",
-    goodFits: ["ミニアプリ開発", "診断サイト", "比較サイト", "自動化ツール販売", "業務効率化ツール", "テンプレート販売"],
-    badFits: ["対人依存が強い仕事", "毎回オーダーメイド前提の受託"],
-    firstStep: "1個を完璧に作るより、同じ土台で量産できる形を先に作るのが向いています。",
-    advice: "あなたは『頑張り続ける』より、『最初に賢く作る』方が強いです。"
-  },
-  content: {
-    title: "あなたは「発信・コンテンツ型」です",
-    summary: "あなたは、考えたことや経験を言葉や形にして届ける副業と相性がいいです。伝える力で価値を出しやすいタイプです。",
-    goodFits: ["SNS運用", "note販売", "ブログ", "コンテンツ制作", "台本作成"],
-    badFits: ["完全に無言で進めるだけの作業"],
-    firstStep: "誰に向けて何を発信するかを、まず1つに絞るのが大事です。",
-    advice: "あなたは『作る力』だけでなく『伝える力』で勝てるタイプです。"
-  },
-  sales: {
-    title: "あなたは「営業・提案型」です",
-    summary: "あなたは、相手の悩みを聞いて必要なものを提案して形にする副業が向いています。課題解決の流れの中で力を出しやすいタイプです。",
-    goodFits: ["HP制作営業", "SNS運用代行", "LINE導線改善", "小規模事業者向けサポート"],
-    badFits: ["ひたすら一人で積み上げるだけの副業"],
-    firstStep: "何を作るかより先に、誰の困りごとを解決するかを決めると強いです。",
-    advice: "あなたは商品を置いて待つより、人に合わせて提案した方が強いです。"
-  },
-  expert: {
-    title: "あなたは「専門知識活用型」です",
-    summary: "あなたは、今までの仕事経験や実務知識をそのまま活かせる副業と相性がいいです。持っている知識をお金に変える方が勝ちやすいタイプです。",
-    goodFits: ["実務代行", "業務改善支援", "資料・集計・分析支援", "リサーチ補助", "業界特化ミニツール制作"],
-    badFits: ["知識が活きない横並び競争"],
-    firstStep: "自分の仕事で、他の人が面倒がる作業を書き出すところから始めるのがおすすめです。",
-    advice: "新しい武器を探す前に、今持っている武器をお金に変える方が早いです。"
-  }
-};
-
 const tieBreakerQuestionIndexes = [1, 3, 9];
 
 let currentQuestionIndex = 0;
@@ -194,7 +134,9 @@ const resultSummary = document.getElementById("result-summary");
 const resultGoodFits = document.getElementById("result-goodfits");
 const resultBadFits = document.getElementById("result-badfits");
 const resultFirstStep = document.getElementById("result-firststep");
+const resultWeekActions = document.getElementById("result-week-actions");
 const resultAdvice = document.getElementById("result-advice");
+const resultDetailLink = document.getElementById("result-detail-link");
 
 function showScreen(screenName) {
   startScreen.classList.remove("active");
@@ -235,21 +177,17 @@ function renderQuestion() {
 }
 
 function calculateResultType() {
-  const scores = {
-    steady: 0,
-    quick: 0,
-    system: 0,
-    content: 0,
-    sales: 0,
-    expert: 0
-  };
+  const scores = TYPE_ORDER.reduce((acc, type) => {
+    acc[type] = 0;
+    return acc;
+  }, {});
 
   answers.forEach((type) => {
     scores[type] += 1;
   });
 
-  let maxScore = Math.max(...Object.values(scores));
-  let topTypes = Object.keys(scores).filter((type) => scores[type] === maxScore);
+  const maxScore = Math.max(...Object.values(scores));
+  const topTypes = Object.keys(scores).filter((type) => scores[type] === maxScore);
 
   if (topTypes.length === 1) {
     return topTypes[0];
@@ -276,14 +214,16 @@ function createListItems(targetElement, items) {
 
 function renderResult() {
   const resultType = calculateResultType();
-  const data = results[resultType];
+  const data = TYPE_DATA[resultType];
 
   resultTitle.textContent = data.title;
   resultSummary.textContent = data.summary;
   createListItems(resultGoodFits, data.goodFits);
   createListItems(resultBadFits, data.badFits);
   resultFirstStep.textContent = data.firstStep;
+  createListItems(resultWeekActions, data.firstWeekActions);
   resultAdvice.textContent = data.advice;
+  resultDetailLink.href = data.detailPagePath;
 
   showScreen("result");
   window.scrollTo({ top: 0, behavior: "smooth" });

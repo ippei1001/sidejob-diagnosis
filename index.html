@@ -21,7 +21,7 @@
         <div class="info-list">
           <div class="info-item">質問は全部で10問</div>
           <div class="info-item">直感で答えてOK</div>
-          <div class="info-item">結果で最初の一歩もわかる</div>
+          <div class="info-item">結果後の次の行動までわかる</div>
         </div>
 
         <button id="start-button" class="primary-button">診断をはじめる</button>
@@ -54,12 +54,12 @@
         <p id="result-summary" class="result-summary"></p>
 
         <div class="result-block">
-          <h3>向いている副業</h3>
+          <h3>あなた向けの副業3選</h3>
           <ul id="result-goodfits"></ul>
         </div>
 
         <div class="result-block">
-          <h3>向いていない副業</h3>
+          <h3>向いていない副業2選</h3>
           <ul id="result-badfits"></ul>
         </div>
 
@@ -69,17 +69,24 @@
         </div>
 
         <div class="result-block">
+          <h3>最初の1週間でやること</h3>
+          <ul id="result-week-actions"></ul>
+        </div>
+
+        <div class="result-block">
           <h3>一言アドバイス</h3>
           <p id="result-advice"></p>
         </div>
 
-        <div class="result-actions">
+        <div class="result-actions stacked-actions">
+          <a id="result-detail-link" class="primary-button" href="#">詳細ページを見る</a>
           <button id="retry-button" class="secondary-button">もう一度診断する</button>
         </div>
       </div>
     </section>
   </main>
 
+  <script src="data.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
