@@ -14,10 +14,11 @@ if (recommendRoot) {
     document.getElementById("recommend-title").textContent = recommendData.pageTitle;
     document.getElementById("recommend-intro").textContent = recommendData.intro;
     document.getElementById("recommend-reason").textContent = recommendData.reason;
-    document.getElementById("recommend-ai").textContent = recommendData.aiStart;
+    document.getElementById("recommend-ai").textContent = recommendData.aiStartIntro;
 
     fillList("recommend-week", recommendData.firstWeek);
     fillList("recommend-mistakes", recommendData.mistakes);
+    fillList("recommend-ai-steps", recommendData.aiSteps);
 
     renderJobCards(recommendData.sideJobs);
     renderComparisonTable(recommendData.sideJobs);
@@ -43,6 +44,8 @@ function renderJobCards(sideJobs) {
         <div><dt>始めやすさ</dt><dd>${job.ease}</dd></div>
         <div><dt>収益化までの早さ</dt><dd>${job.speed}</dd></div>
         <div><dt>初期費用感</dt><dd>${job.cost}</dd></div>
+        <div><dt>継続しやすさ</dt><dd>${job.sustainability}</dd></div>
+        <div><dt>AIとの相性</dt><dd>${job.aiFit}</dd></div>
       </dl>
       <p><strong>最初にやること：</strong>${job.firstAction}</p>
       <p><strong>注意点：</strong>${job.caution}</p>
@@ -62,7 +65,8 @@ function renderComparisonTable(sideJobs) {
       <td>${job.ease}</td>
       <td>${job.speed}</td>
       <td>${job.cost}</td>
-      <td>${job.suitableFor}</td>
+      <td>${job.sustainability}</td>
+      <td>${job.aiFit}</td>
     `;
     body.appendChild(tr);
   });
@@ -70,8 +74,9 @@ function renderComparisonTable(sideJobs) {
 
 function fillList(targetId, items) {
   const target = document.getElementById(targetId);
-  target.innerHTML = "";
+  if (!target || !Array.isArray(items)) return;
 
+  target.innerHTML = "";
   items.forEach((item) => {
     const li = document.createElement("li");
     li.textContent = item;
