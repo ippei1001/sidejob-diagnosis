@@ -548,3 +548,43 @@ h1 {
   transform: none !important;
   box-shadow: none;
 }
+
+.line-cta-card {
+  background: linear-gradient(180deg, #eefaf4 0%, #f8fffb 100%);
+  border: 1px solid #ccebdd;
+}
+
+.line-button {
+  background: linear-gradient(180deg, #2ac668 0%, #16a34a 100%);
+  color: #ffffff;
+  box-shadow: 0 10px 24px rgba(22, 163, 74, 0.22);
+}
+
+.line-button:hover {
+  background: linear-gradient(180deg, #22bb5f 0%, #15803d 100%);
+}
+
+.line-sub-cta {
+  margin-top: 14px;
+  border-top: 1px solid #dbe7df;
+  padding-top: 12px;
+}
+
+.line-sub-cta-text {
+  margin: 0 0 10px;
+  font-size: 14px;
+  color: #374151;
+}
+
+.line-sub-button {
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.line-sub-cta-note {
+  margin: 8px 0 0;
+  font-size: 12px;
+  color: var(--text-soft);
+}
