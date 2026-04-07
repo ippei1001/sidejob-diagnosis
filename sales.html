@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>副業タイプ診断 詳細ページ</title>
-  <meta name="description" content="副業タイプ診断の詳細ページです。タイプごとの特徴、向いている副業、始め方を確認できます。" />
+  <meta name="description" content="副業タイプ診断の詳細ページです。タイプごとの特徴、向いている副業、進め方を確認できます。" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -19,12 +19,14 @@
 
         <div class="content-stack">
           <article class="content-card">
-            <h2>そのタイプの特徴</h2>
+            <h2>このタイプの特徴</h2>
             <p id="detail-features"></p>
+            <h3>このタイプが向いている理由</h3>
+            <p id="detail-reason"></p>
           </article>
 
           <article class="content-card">
-            <h2>向いている副業3つ</h2>
+            <h2>向いている副業3選</h2>
             <ul id="detail-goodfits"></ul>
           </article>
 
@@ -34,8 +36,13 @@
           </article>
 
           <article class="content-card">
-            <h2>始め方</h2>
-            <p id="detail-start"></p>
+            <h2>最初の1週間でやること</h2>
+            <ul id="detail-week"></ul>
+          </article>
+
+          <article class="content-card">
+            <h2>1か月目の進め方</h2>
+            <p id="detail-month"></p>
           </article>
 
           <article class="content-card">
@@ -47,10 +54,13 @@
             <h2>AIを使うならどう始めるか</h2>
             <p id="detail-ai-start"></p>
           </article>
-        </div>
 
-        <div class="page-actions">
-          <a class="primary-button" href="index.html">診断ページに戻る</a>
+          <article class="content-card">
+            <h2>診断に戻る</h2>
+            <div class="page-actions">
+              <a class="primary-button" href="index.html">診断ページに戻る</a>
+            </div>
+          </article>
         </div>
       </div>
     </section>
