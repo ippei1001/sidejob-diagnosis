@@ -289,3 +289,20 @@ h1 {
     font-size: 18px;
   }
 }
+
+.content-card h3 {
+  margin: 14px 0 8px;
+  font-size: 16px;
+  color: #1f2937;
+}
+
+.page-actions {
+  margin-top: 8px;
+}
+
+.page-actions .primary-button {
+  min-height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
