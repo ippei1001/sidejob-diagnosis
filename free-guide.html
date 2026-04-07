@@ -15,6 +15,7 @@
           <p class="eyebrow">FREE GUIDE</p>
           <h1 class="page-title">副業タイプ別 はじめ方ガイド</h1>
           <p class="page-intro">診断結果を見て「次に何をすればいいか」を迷わないように、タイプ別の実践ガイドを無料で受け取れるページです。まずは内容を確認して、あなたに合うかどうかを判断してください。</p>
+          <p id="guide-context" class="guide-context-text">診断結果・おすすめ副業ページを見たあとに、そのまま次の行動へ進める受け皿ページです。</p>
         </header>
 
         <div class="content-stack">
@@ -56,10 +57,10 @@
 
           <article class="content-card cta-card">
             <h2>ガイド受け取りエリア（今後の本登録導線）</h2>
-            <p>ここは将来、LINE登録やメールフォームに差し替える予定のCTAエリアです。ボタンや案内文をそのまま置き換えれば運用を開始できます。</p>
+            <p>ここは将来、LINE登録やメールフォームに差し替える予定のCTAエリアです。ボタンや案内文をそのまま置き換えれば運用を開始できます。準備ができたら、このエリアからそのまま受け取り開始できます。</p>
             <div class="guide-cta-area">
-              <a class="primary-button" href="#" aria-disabled="true">無料ガイドを受け取る</a>
-              <a class="secondary-button" href="#" aria-disabled="true">受け取り方法を準備中</a>
+              <button class="primary-button disabled-button" type="button" disabled>無料ガイドを受け取る（準備中）</button>
+              <button class="secondary-button disabled-button" type="button" disabled>LINE登録 / フォーム導線を順次追加予定</button>
               <p class="cta-note">ご案内開始までお待ちください。準備が整い次第、このエリアから受け取れるようになります。</p>
             </div>
           </article>
@@ -90,21 +91,25 @@
   <script>
     (function () {
       const map = {
-        steady: { href: 'steady-recommend.html', label: 'じっくり積み上げ型のおすすめページに戻る' },
-        quick: { href: 'quick-recommend.html', label: 'スピード重視型のおすすめページに戻る' },
-        system: { href: 'system-recommend.html', label: '仕組み化・自動化型のおすすめページに戻る' },
-        content: { href: 'content-recommend.html', label: '発信・コンテンツ型のおすすめページに戻る' },
-        sales: { href: 'sales-recommend.html', label: '営業・コミュニケーション型のおすすめページに戻る' },
-        expert: { href: 'expert-recommend.html', label: '専門性活用型のおすすめページに戻る' }
+        steady: { href: 'steady-recommend.html', label: 'コツコツ積み上げ型のおすすめページに戻る', context: '現在は「コツコツ積み上げ型」向けの次アクションを優先して表示しています。' },
+        quick: { href: 'quick-recommend.html', label: '即収益スキル販売型のおすすめページに戻る', context: '現在は「即収益スキル販売型」向けの次アクションを優先して表示しています。' },
+        system: { href: 'system-recommend.html', label: '仕組み化・自動化型のおすすめページに戻る', context: '現在は「仕組み化・自動化型」向けの次アクションを優先して表示しています。' },
+        content: { href: 'content-recommend.html', label: '発信・コンテンツ型のおすすめページに戻る', context: '現在は「発信・コンテンツ型」向けの次アクションを優先して表示しています。' },
+        sales: { href: 'sales-recommend.html', label: '営業・提案型のおすすめページに戻る', context: '現在は「営業・提案型」向けの次アクションを優先して表示しています。' },
+        expert: { href: 'expert-recommend.html', label: '専門知識活用型のおすすめページに戻る', context: '現在は「専門知識活用型」向けの次アクションを優先して表示しています。' }
       };
 
       const params = new URLSearchParams(window.location.search);
       const from = params.get('from');
       const backLink = document.getElementById('recommend-back-link');
+      const contextText = document.getElementById('guide-context');
 
       if (backLink && from && map[from]) {
         backLink.href = map[from].href;
         backLink.textContent = map[from].label;
+        if (contextText) {
+          contextText.textContent = map[from].context;
+        }
       }
     })();
   </script>

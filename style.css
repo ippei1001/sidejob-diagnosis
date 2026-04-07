@@ -310,6 +310,13 @@ h1 {
   color: var(--text-sub);
 }
 
+.guide-context-text {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text-soft);
+}
+
 .content-stack {
   display: grid;
   gap: 14px;
@@ -533,4 +540,11 @@ h1 {
 
 .text-link:hover {
   text-decoration: underline;
+}
+
+.disabled-button {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none;
 }
