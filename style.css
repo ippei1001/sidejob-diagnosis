@@ -484,3 +484,53 @@ h1 {
     grid-template-columns: 1fr;
   }
 }
+
+.note-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+}
+
+.cta-card {
+  background: linear-gradient(180deg, #eef2ff 0%, #f8faff 100%);
+  border: 1px solid #c7d2fe;
+}
+
+.guide-cta-area {
+  margin-top: 14px;
+  display: grid;
+  gap: 10px;
+}
+
+.cta-note {
+  margin: 4px 0 0;
+  font-size: 13px;
+  color: var(--text-soft);
+  text-align: center;
+}
+
+.recommend-links {
+  margin-top: 16px;
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+}
+
+.recommend-links-title {
+  margin: 0 0 10px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.recommend-links-grid {
+  display: grid;
+  gap: 8px;
+}
+
+.text-link {
+  color: var(--brand-deep);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.text-link:hover {
+  text-decoration: underline;
+}
