@@ -38,7 +38,8 @@
                     <th scope="col">始めやすさ</th>
                     <th scope="col">収益化までの早さ</th>
                     <th scope="col">初期費用感</th>
-                    <th scope="col">向いている人</th>
+                    <th scope="col">継続しやすさ</th>
+                    <th scope="col">AIとの相性</th>
                   </tr>
                 </thead>
                 <tbody id="recommend-table-body"></tbody>
@@ -59,19 +60,23 @@
           <article class="content-card">
             <h2>AIを使うならどう始めるか</h2>
             <p id="recommend-ai"></p>
+            <ul id="recommend-ai-steps"></ul>
           </article>
 
           <article class="content-card">
             <h2>無料ガイドの受け取り導線</h2>
-            <div class="guide-placeholder">
-              <p>ここに「無料で始め方ガイドを受け取る」フォームやボタンを設置できます。後で外部フォームやLPへ差し替えしやすいよう、独立した枠で用意しています。</p>
+            <div id="guide-cta" class="guide-placeholder">
+              <p>この枠は「無料で始め方ガイドを受け取る」CTA専用です。GoogleフォームやLINE登録のURLに差し替えるだけで公開できます。</p>
+              <div class="page-actions">
+                <a class="primary-button" href="#">無料で始め方ガイドを受け取る</a>
+              </div>
             </div>
           </article>
 
           <article class="content-card">
             <h2>次に読みたいページ</h2>
             <div class="stacked-actions page-actions">
-              <a class="primary-button" href="#" aria-disabled="true">無料で始め方ガイドを受け取る（準備中）</a>
+              <a class="primary-button" href="#guide-cta">無料ガイド導線の位置を確認する</a>
               <a id="recommend-detail-link" class="secondary-button" href="#">このタイプの詳しい解説を見る</a>
               <a class="secondary-button" href="index.html">診断に戻る</a>
             </div>
