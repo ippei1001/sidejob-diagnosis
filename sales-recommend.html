@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>おすすめ副業3選 | 副業タイプ診断</title>
+  <meta name="description" content="副業タイプ診断のタイプ別おすすめ副業3選ページです。比較表と最初の行動まで確認できます。" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <section class="screen active">
+      <div class="card" id="recommend-page" data-type="sales">
+        <header class="page-header">
+          <p id="recommend-eyebrow" class="eyebrow"></p>
+          <h1 id="recommend-title" class="page-title"></h1>
+          <p id="recommend-intro" class="page-intro"></p>
+        </header>
+
+        <div class="content-stack">
+          <article class="content-card">
+            <h2>このタイプにこの副業が向いている理由</h2>
+            <p id="recommend-reason"></p>
+          </article>
+
+          <article class="content-card">
+            <h2>おすすめ副業3選</h2>
+            <div id="recommend-jobs" class="recommend-jobs"></div>
+          </article>
+
+          <article class="content-card">
+            <h2>それぞれの副業の比較</h2>
+            <div class="table-wrap">
+              <table class="recommend-table">
+                <thead>
+                  <tr>
+                    <th scope="col">副業</th>
+                    <th scope="col">始めやすさ</th>
+                    <th scope="col">収益化までの早さ</th>
+                    <th scope="col">初期費用感</th>
+                    <th scope="col">向いている人</th>
+                  </tr>
+                </thead>
+                <tbody id="recommend-table-body"></tbody>
+              </table>
+            </div>
+          </article>
+
+          <article class="content-card">
+            <h2>最初の1週間でやること</h2>
+            <ul id="recommend-week"></ul>
+          </article>
+
+          <article class="content-card">
+            <h2>このタイプが失敗しやすいポイント</h2>
+            <ul id="recommend-mistakes"></ul>
+          </article>
+
+          <article class="content-card">
+            <h2>AIを使うならどう始めるか</h2>
+            <p id="recommend-ai"></p>
+          </article>
+
+          <article class="content-card">
+            <h2>無料ガイドの受け取り導線</h2>
+            <div class="guide-placeholder">
+              <p>ここに「無料で始め方ガイドを受け取る」フォームやボタンを設置できます。後で外部フォームやLPへ差し替えしやすいよう、独立した枠で用意しています。</p>
+            </div>
+          </article>
+
+          <article class="content-card">
+            <h2>次に読みたいページ</h2>
+            <div class="stacked-actions page-actions">
+              <a class="primary-button" href="#" aria-disabled="true">無料で始め方ガイドを受け取る（準備中）</a>
+              <a id="recommend-detail-link" class="secondary-button" href="#">このタイプの詳しい解説を見る</a>
+              <a class="secondary-button" href="index.html">診断に戻る</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="data.js"></script>
+  <script src="recommend.js"></script>
+</body>
+</html>

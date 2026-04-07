@@ -397,3 +397,90 @@ h1 {
   align-items: center;
   justify-content: center;
 }
+
+.recommend-jobs {
+  display: grid;
+  gap: 12px;
+}
+
+.recommend-job-card {
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 14px;
+  background: #ffffff;
+}
+
+.recommend-job-card h3 {
+  margin: 0 0 8px;
+  font-size: 18px;
+}
+
+.recommend-job-card p {
+  margin: 0 0 8px;
+}
+
+.recommend-metrics {
+  margin: 10px 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.recommend-metrics div {
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 8px;
+}
+
+.recommend-metrics dt {
+  font-size: 12px;
+  color: var(--text-soft);
+  margin-bottom: 4px;
+}
+
+.recommend-metrics dd {
+  margin: 0;
+  font-weight: 700;
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+.recommend-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 620px;
+  font-size: 14px;
+}
+
+.recommend-table th,
+.recommend-table td {
+  border: 1px solid var(--border);
+  padding: 10px;
+  text-align: left;
+  vertical-align: top;
+  line-height: 1.6;
+}
+
+.recommend-table thead th {
+  background: #f3f4f6;
+  font-size: 13px;
+}
+
+.guide-placeholder {
+  border: 1.5px dashed #c7d2fe;
+  background: #eef2ff;
+  border-radius: 14px;
+  padding: 14px;
+}
+
+.guide-placeholder p {
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .recommend-metrics {
+    grid-template-columns: 1fr;
+  }
+}

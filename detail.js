@@ -23,7 +23,27 @@ if (pageRoot) {
     fillList("detail-badfits", detail.badFits);
     fillList("detail-week", detail.firstWeek);
     fillList("detail-mistakes", detail.mistakes);
+
+    appendRecommendLink(typeData.recommendPagePath, TYPE_LABELS[typeKey]);
   }
+}
+
+function appendRecommendLink(link, label) {
+  if (!link) return;
+
+  const stack = document.querySelector("#detail-page .content-stack");
+  const returnCard = stack.lastElementChild;
+  const recommendCard = document.createElement("article");
+  recommendCard.className = "content-card";
+  recommendCard.innerHTML = `
+    <h2>おすすめ副業3選を見る</h2>
+    <p>このタイプ向けの候補を比較しながら、最初の行動までまとめて確認できます。</p>
+    <div class="page-actions">
+      <a class="primary-button" href="${link}">${label}向けおすすめ副業3選へ</a>
+    </div>
+  `;
+
+  stack.insertBefore(recommendCard, returnCard);
 }
 
 function fillList(targetId, items) {
