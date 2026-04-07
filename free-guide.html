@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>副業タイプ別 はじめ方ガイド | 副業タイプ診断</title>
+  <meta name="description" content="診断タイプに合わせた副業スタートの無料ガイド案内ページ。何が受け取れるか・どんな人向けか・受け取るメリットを確認できます。" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <section class="screen active">
+      <div class="card">
+        <header class="page-header">
+          <p class="eyebrow">FREE GUIDE</p>
+          <h1 class="page-title">副業タイプ別 はじめ方ガイド</h1>
+          <p class="page-intro">診断結果を見て「次に何をすればいいか」を迷わないように、タイプ別の実践ガイドを無料で受け取れるページです。まずは内容を確認して、あなたに合うかどうかを判断してください。</p>
+        </header>
+
+        <div class="content-stack">
+          <article class="content-card">
+            <h2>この無料ガイドで受け取れる内容</h2>
+            <ul>
+              <li>あなたのタイプに合う副業3選</li>
+              <li>向いていない副業</li>
+              <li>最初の1週間でやること</li>
+              <li>1か月目の進め方</li>
+              <li>AIをどう使えばいいかのヒント</li>
+            </ul>
+          </article>
+
+          <article class="content-card">
+            <h2>どんな人向けか</h2>
+            <ul>
+              <li>副業に興味はあるが何から始めればいいかわからない人</li>
+              <li>診断結果を見て、もう少し具体的に動きたい人</li>
+              <li>自分に合う副業の選び方で迷っている人</li>
+              <li>AIも使いながら効率よく始めたい人</li>
+            </ul>
+          </article>
+
+          <article class="content-card">
+            <h2>受け取るメリット</h2>
+            <ul>
+              <li>自分に合わない副業を避けやすくなる</li>
+              <li>最初の行動が明確になる</li>
+              <li>調べすぎて止まるのを防げる</li>
+              <li>AIをどう使うかの入口がわかる</li>
+            </ul>
+          </article>
+
+          <article class="content-card note-card">
+            <h2>現在のご案内状況</h2>
+            <p>現在、ガイド内容をよりわかりやすくお届けできるよう整備中です。受け取り方法（LINE登録・フォーム送信など）は順次追加予定です。先に内容の方向性を確認できるよう、土台ページとして公開しています。</p>
+          </article>
+
+          <article class="content-card cta-card">
+            <h2>ガイド受け取りエリア（今後の本登録導線）</h2>
+            <p>ここは将来、LINE登録やメールフォームに差し替える予定のCTAエリアです。ボタンや案内文をそのまま置き換えれば運用を開始できます。</p>
+            <div class="guide-cta-area">
+              <a class="primary-button" href="#" aria-disabled="true">無料ガイドを受け取る</a>
+              <a class="secondary-button" href="#" aria-disabled="true">受け取り方法を準備中</a>
+              <p class="cta-note">ご案内開始までお待ちください。準備が整い次第、このエリアから受け取れるようになります。</p>
+            </div>
+          </article>
+
+          <article class="content-card">
+            <h2>ページ移動</h2>
+            <div class="stacked-actions page-actions">
+              <a class="secondary-button" href="index.html">診断ページに戻る</a>
+              <a id="recommend-back-link" class="primary-button" href="steady-recommend.html">おすすめ副業ページに戻る</a>
+            </div>
+            <div class="recommend-links">
+              <p class="recommend-links-title">おすすめ副業ページ一覧</p>
+              <div class="recommend-links-grid">
+                <a class="text-link" href="steady-recommend.html">じっくり積み上げ型</a>
+                <a class="text-link" href="quick-recommend.html">スピード重視型</a>
+                <a class="text-link" href="system-recommend.html">仕組み化・自動化型</a>
+                <a class="text-link" href="content-recommend.html">発信・コンテンツ型</a>
+                <a class="text-link" href="sales-recommend.html">営業・コミュニケーション型</a>
+                <a class="text-link" href="expert-recommend.html">専門性活用型</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      const map = {
+        steady: { href: 'steady-recommend.html', label: 'じっくり積み上げ型のおすすめページに戻る' },
+        quick: { href: 'quick-recommend.html', label: 'スピード重視型のおすすめページに戻る' },
+        system: { href: 'system-recommend.html', label: '仕組み化・自動化型のおすすめページに戻る' },
+        content: { href: 'content-recommend.html', label: '発信・コンテンツ型のおすすめページに戻る' },
+        sales: { href: 'sales-recommend.html', label: '営業・コミュニケーション型のおすすめページに戻る' },
+        expert: { href: 'expert-recommend.html', label: '専門性活用型のおすすめページに戻る' }
+      };
+
+      const params = new URLSearchParams(window.location.search);
+      const from = params.get('from');
+      const backLink = document.getElementById('recommend-back-link');
+
+      if (backLink && from && map[from]) {
+        backLink.href = map[from].href;
+        backLink.textContent = map[from].label;
+      }
+    })();
+  </script>
+</body>
+</html>
