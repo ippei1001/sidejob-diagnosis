@@ -55,13 +55,12 @@
             <p>現在、ガイド内容をよりわかりやすくお届けできるよう整備中です。受け取り方法（LINE登録・フォーム送信など）は順次追加予定です。先に内容の方向性を確認できるよう、土台ページとして公開しています。</p>
           </article>
 
-          <article class="content-card cta-card">
-            <h2>ガイド受け取りエリア（今後の本登録導線）</h2>
-            <p>ここは将来、LINE登録やメールフォームに差し替える予定のCTAエリアです。ボタンや案内文をそのまま置き換えれば運用を開始できます。準備ができたら、このエリアからそのまま受け取り開始できます。</p>
+          <article class="content-card cta-card line-cta-card">
+            <h2>LINEで無料ガイドの受け取り案内を受ける</h2>
+            <p>ご案内の準備ができ次第、LINEから無料ガイドの受け取り方法をお知らせします。まずはLINEで受け取り手順を確認しておきたい方向けの窓口です。</p>
             <div class="guide-cta-area">
-              <button class="primary-button disabled-button" type="button" disabled>無料ガイドを受け取る（準備中）</button>
-              <button class="secondary-button disabled-button" type="button" disabled>LINE登録 / フォーム導線を順次追加予定</button>
-              <p class="cta-note">ご案内開始までお待ちください。準備が整い次第、このエリアから受け取れるようになります。</p>
+              <a class="primary-button line-button" data-line-link href="https://example.com/line">LINEで受け取り方法を見る</a>
+              <p class="cta-note">登録は無料です。必要ないと感じたら、いつでもブロックできます。</p>
             </div>
           </article>
 
@@ -88,6 +87,7 @@
     </section>
   </main>
 
+  <script src="line-config.js"></script>
   <script>
     (function () {
       const map = {
